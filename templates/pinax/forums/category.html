@@ -1,4 +1,4 @@
-{% extends 'pinax/forums/base.html' %}
+{% extends "pinax/base.html" %}
 
 {% load humanize %}
 
@@ -7,7 +7,7 @@
         <li><a href="{% url 'pinax_forums:forums' %}">Forums</a></li>
         {% if category.parent %}</span>
         <li>
-            <a href="{% url 'pinax_forums:category' category.parent.pk %}">
+            <a href="{% url "pinax_forums:category" category.parent.pk %}">
                 {{ category.parent.title }}
             </a>
         </li>
@@ -34,10 +34,10 @@
                     <tbody>
                         {% for forum in forums %}
                         <tr>
-                            <td><a href="{% url 'pinax_forums:forum' forum.id %}">{{ forum.title }}</a><br />
+                            <td><a href="{% url "pinax_forums:forum" forum.id %}">{{ forum.title }}</a><br />
                                 <small>{{ forum.description }}</small></td>
                             {% if forum.last_reply %}
-                            <td><a href="{% url 'pinax_forums:thread' forum.last_reply.thread.id %}">{{ forum.last_reply.thread.title }}</a><br />
+                            <td><a href="{% url "pinax_forums:thread" forum.last_reply.thread.id %}">{{ forum.last_reply.thread.title }}</a><br />
                                 <small>by <a href="{# url user_page forum.last_reply.author.id #}">{{ forum.last_reply.author.username }}</a></small></td>
                             {% else %}
                             <td></td>

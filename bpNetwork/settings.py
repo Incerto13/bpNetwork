@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'pinax.templates',
     'bootstrapform',
     'django.contrib.humanize',
+    'bootstrap3',
 
 
 ]
